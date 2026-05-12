@@ -1,9 +1,9 @@
-"""code written by Yoyo"""
+# By Yoyo
 import json
 import os
 from dataclasses import dataclass, field
 
-"""try to import CIRpy library for drawing the molecule"""
+# try to import CIRpy library for drawing the molecule
 try:
     import cirpy
     CIRPY_AVAILABLE = True
@@ -13,7 +13,9 @@ except ImportError:
 
 @dataclass
 class Molecule:
-    """define data type"""
+    """
+    define data type
+    """
     name: str
     iupac_name: str
     formula: str
@@ -28,8 +30,10 @@ class Molecule:
     fun_fact: str = ""
 
     def get_rdkit_mol(self):
+        """
+        construct molecule from a SMILES string
+        """
         from rdkit import Chem
-        """construct molecule from a SMILES string"""
         mol = Chem.MolFromSmiles(self.smiles) 
         if mol is None:
             print(f"[WARNING] Bad SMILES for {self.name}")
@@ -54,13 +58,16 @@ class MoleculeDatabase:
             json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "molecules.json")
         self._load_from_json(json_path)
         print(f"[Database] {len(self._compounds)} compounds loaded.")
-
-    """import data from database in JSON file"""
+    
     def _load_from_json(self, path):
+        """
+        import data from database in JSON file
+        """
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         for entry in data["molecules"]:
-            """showing the info of the molecule"""
+
+            # showing the info of the molecule
             mol = Molecule(
                 name = entry["name"],
                 iupac_name = entry["iupac_name"],
@@ -86,11 +93,10 @@ class MoleculeDatabase:
             return mol, True
         if CIRPY_AVAILABLE:
             try:
-                """get SMILES string of the molecule from CIRpy"""
+                # get SMILES string of the molecule from CIRpy
                 smiles = cirpy.resolve(name, "smiles") 
-                """
-                no data available for the molecule generate with CIRpy
-                """
+                
+                # no data available for the molecule generated with CIRpy
                 if smiles:
                     mol = Molecule(
                         name=name.lower(), iupac_name=name, formula="Unknown", molecular_weight=0.0, smiles=smiles,                       
@@ -108,4 +114,3 @@ class MoleculeDatabase:
     def list_names(self):
         return sorted(self._compounds.keys())
     
-"""end of code written by Yoyo"""
