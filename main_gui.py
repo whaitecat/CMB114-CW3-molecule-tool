@@ -364,7 +364,7 @@ def run():
                 box.pack(anchor="w", pady=4)
             result = heavy()
             done(result)
-        self.make_btn(f, "Compare", run)
+self.make_btn(f, "Compare", run)
 
 
 if __name__ == "__main__":
