@@ -217,7 +217,7 @@ class SpectroscopyApp:
 
         self.make_btn(f, "Generate", generate)
 
-    # MODE 2 — Viewer (code written by Yoyo)
+    """MODE 2 — Viewer (code written by Yoyo)"""
     def show_viewer(self):
         self.switch_to("Viewer")
         f = self.scrollable(self.content)
@@ -260,13 +260,19 @@ class SpectroscopyApp:
             if full:
                 info_label.config(text=(
                     f"{mol.iupac_name}   {mol.formula}   MW={mol.molecular_weight} g/mol   {mol.compound_class}\n"
-                    f"Groups: {', '.join(mol.functional_groups)}"))
+                    f"Groups: {', '.join(mol.functional_groups)}\n"
+                    f"IR peaks: {mol.ir_peaks}\n"
+                    f"MS peaks: {mol.ms_peaks}\n"
+                    f"UV peaks: {mol.uv_peaks}\n"
+                    f"NMR peaks: {mol.nmr_peaks}\n"))
             else:
                 info_label.config(text="Molecule not in database. Structure retrieved online. No spectral data available.")
             status_label.config(text=f"Image saved to {path}")
 
-        # choice for user to export file (.xyz/.mol) to look the 3D molecule in Avogadro
-        # the user can choose from both
+        """
+        choice for user to export file (.xyz/.mol) to look the 3D molecule in Avogadro
+        the user can choose from both
+        """
         def export(filetype):
             if self.viewer_mol is None:
                 messagebox.showerror("Error", "Draw a molecule first.")
@@ -290,11 +296,11 @@ class SpectroscopyApp:
         btn_row = tk.Frame(f, bg=BG)
         btn_row.pack(anchor="w", pady=4)
         
-        # button for export and draw
+        """button for export and draw"""
         self.make_btn(btn_row, "Draw", draw, side="left")
         self.make_btn(btn_row, "Export .mol for Avogadro", lambda: export("mol"), side="left")
         self.make_btn(btn_row, "Export .xyz for Avogadro", lambda: export("xyz"), side="left")
-# end of code written by Yoyo
+"""end of code written by Yoyo"""
 
     # MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)
     def show_database(self):
@@ -314,7 +320,7 @@ class SpectroscopyApp:
                          font=("Arial", 8, "italic"), wraplength=700,
                          justify="left").pack(anchor="w")
                 
-# MODE 4 — Comparator (written by Yoyo)
+""" MODE 4 — Comparator (written by Yoyo)"""
     def show_comparator(self):
         self.switch_to("Comparator")
         f = self.scrollable(self.content)
@@ -333,11 +339,14 @@ class SpectroscopyApp:
 
         def run():
             na, nb = a_entry.get().strip().lower(), b_entry.get().strip().lower() 
-            if not na or not nb: return messagebox.showerror("Error", "Enter both molecule names.") # validate input
-            for w in rf.winfo_children(): # close previous plot
+            """validate the inputs"""
+            if not na or not nb: return messagebox.showerror("Error", "Enter both molecule names.") 
+            """close previous plot"""
+            for w in rf.winfo_children(): 
                 w.destroy()
             plt.close("all")
-            def heavy(): # define heavy work
+            """define heavy work"""
+            def heavy(): 
                 return self.comparator.compare(na, nb)
             def done(res):  #show comparison
                 fig, summary = res
