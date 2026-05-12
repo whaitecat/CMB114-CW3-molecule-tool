@@ -77,7 +77,8 @@ class SpectroscopyApp:
         cv = FigureCanvasTkAgg(fig, master=p)
         cv.draw(); cv.get_tk_widget().pack(fill="both", expand=True, pady=4)
 
-    # put run function here, otherwise the mode won't run correctly 
+    # put run function here, otherwise the mode won't run correctly
+    # the "run" function should be put before the "show_comparator" to show the "Compare" button successfully in the user interface  
     def run(self):
         na, nb = a_entry.get().strip().lower(), b_entry.get().strip().lower()
         # validate the inputs
