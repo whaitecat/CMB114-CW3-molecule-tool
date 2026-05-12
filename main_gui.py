@@ -304,7 +304,7 @@ class SpectroscopyApp:
 """
 MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)
 """
-    def show_database(self):
+def show_database(self):
         self.switch_to("Database")
         f = self.scrollable(self.content)
 
