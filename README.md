@@ -8,6 +8,9 @@ You can run the code by calling:
 python main_gui.py
 ~~~~
 
+## General info
+This tool aims to view the molecule structure and its spectra data accessed in the database. User can view any molecule structure when CIRpy is available, but without its spectra data.
+
 ## Installation
 User is expected to install the [CIRpy library](https://cirpy.readthedocs.io/en/latest/) and [RDKit library](https://www.rdkit.org/docs/GettingStartedInPython.html) for drawing molecules. Internet is needed when accessing CIRpy.
 
