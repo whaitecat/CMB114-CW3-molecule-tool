@@ -16,7 +16,7 @@ from spectra import IRSpectrum, MassSpectrum, UVVisSpectrum, NMRSpectrum
 from spectro_tools import draw_molecule_2d
 from comparator import SpectrumComparator
 
-# colours
+"""colours"""
 BG = "#0F0F1A"; PANEL = "#1A1A2E"; CARD = "#16213E"
 ACCENT = "#00BFFF"
 TEXT = "#CCCCCC"; WHITE = "#FFFFFF"; GREEN = "#2ECC71"; GOLD = "#FFD700"
@@ -44,7 +44,7 @@ DATABASE
   Browse all 15 built-in compounds.
 """
 
-# code written by Yoyo and Mo
+""" code written by Yoyo and Mo"""
 class SpectroscopyApp:
     def __init__(self, root):
         self.root = root
@@ -62,7 +62,7 @@ class SpectroscopyApp:
         self.show_predictor()
 
     def _build_ui(self):
-        # header
+        """ header """
         hdr = tk.Frame(self.root, bg=PANEL, pady=10)
         hdr.pack(fill="x")
         tk.Frame(hdr, bg=ACCENT, width=5).pack(side="left", fill="y")
@@ -91,7 +91,7 @@ class SpectroscopyApp:
         self.content.pack(fill="both", expand=True)
 
     def make_btn(self, parent, text, cmd, side=None):
-        # uses tk.Label with click binding so buttons never flash white
+        """uses tk.Label with click binding so buttons never flash white (was flashing white before)"""
         b = tk.Label(parent, text=text, bg=ACCENT, fg=WHITE,
                      font=("Arial", 10, "bold"), pady=6, padx=12, cursor="hand2")
         b.bind("<Button-1>", lambda e: cmd())
@@ -144,7 +144,7 @@ class SpectroscopyApp:
         cv = FigureCanvasTkAgg(fig, master=p)
         cv.draw(); cv.get_tk_widget().pack(fill="both", expand=True, pady=4)
 
-    # MODE 1 — Predictor by Mo
+    """ MODE 1 — Predictor by Mo """
     def show_predictor(self):
         self.switch_to("Predictor")
         f = self.scrollable(self.content)
@@ -302,7 +302,7 @@ class SpectroscopyApp:
         self.make_btn(btn_row, "Export .xyz for Avogadro", lambda: export("xyz"), side="left")
 """end of code written by Yoyo"""
 
-    # MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)
+    """ MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)"""
     def show_database(self):
         self.switch_to("Database")
         f = self.scrollable(self.content)
