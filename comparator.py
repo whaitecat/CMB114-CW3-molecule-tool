@@ -1,4 +1,4 @@
-"""by Yoyo"""
+# By Yoyo
 import numpy as np
 import matplotlib
 matplotlib.use("TkAgg")
@@ -10,7 +10,7 @@ from spectra import (IRSpectrum, MassSpectrum, UVVisSpectrum, NMRSpectrum,
                      apply_dark_style, BG_COLOR, PANEL_COLOR, AXIS_COLOR,
                      IR_COLOR, MS_COLOR, UV_COLOR, NMR_COLOR)
 
-"""tolerance for IR peak comparison between two molecules"""
+# tolerance for IR peak comparison between two molecules
 IR_COMPARE_TOL = 50
 
 
@@ -19,7 +19,9 @@ class SpectrumComparator:
         self.db = database
 
     def compare(self, name_a, name_b):
-        """returns (figure, summary_text) or error message"""
+        """
+        returns (figure, summary_text) or error message
+        """
         mol_a = self.db.get(name_a)
         mol_b = self.db.get(name_b)
         if mol_a is None: return None, f"'{name_a}' not found in database."
@@ -28,15 +30,17 @@ class SpectrumComparator:
         return fig, self._build_summary(mol_a, mol_b)
 
     def _build_figure(self, mol_a, mol_b):
+      """
+      shows spectra in an organised layout
+      """
         fig = plt.figure(figsize=(14, 16))
         fig.patch.set_facecolor(BG_COLOR)
-        """GridSpec for subplot layout"""
+        # GridSpec for subplot layout
         gs = gridspec.GridSpec(4, 2, figure=fig, hspace=0.55, wspace=0.3, top=0.93, bottom=0.04)
 
-        """
-        store plot functions in list to avoid repeating the loop 4 times
-        heavy work with loop may get crash
-        """
+        # store plot functions in list to avoid repeating the loop 4 times
+        # heavy work with loop may get crash
+        
         plotters = [
             (IR_COLOR, "IR", self._plot_ir),
             (MS_COLOR, "MS", self._plot_ms),
@@ -62,8 +66,11 @@ class SpectrumComparator:
         ax.text(0.5, 0.5, msg, ha="center", va="center", transform=ax.transAxes, color=AXIS_COLOR)
         ax.set_title(f"{label}: {mol.name.title()}", fontsize=9, color=colour)
 
-    """plot spectrum"""
+    
     def _plot_ir(self, ax, mol, colour, label):
+      """
+      plot spectrum
+      """
         if not mol.ir_peaks: return self._no_data(ax, mol, colour, label, "No IR data")
         x = np.linspace(4000, 500, 4000)
         ax.plot(x, 100 - IRSpectrum(mol)._build_spectrum(x), color=colour, linewidth=1.3)
@@ -108,7 +115,9 @@ class SpectrumComparator:
         ax.set_title(f"{label}: {mol.name.title()}", fontsize=8, color=colour)
 
     def _build_summary(self, mol_a, mol_b):
-        """generates the difference summary in text and show in the GUI"""
+        """
+        generates the difference summary in text and show in the GUI
+        """
         lines = []
 
         if mol_a.formula == mol_b.formula:
