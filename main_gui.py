@@ -44,8 +44,10 @@ DATABASE
   Browse all 15 built-in compounds.
 """
 
-""" code written by Yoyo and Mo"""
 class SpectroscopyApp:
+  """
+  code written by Yoyo and Mo
+  """
     def __init__(self, root):
         self.root = root
         self.root.title("Spectroscopy Analysis Tool  CMB114 CW3")
@@ -60,6 +62,99 @@ class SpectroscopyApp:
 
         self._build_ui()
         self.show_predictor()
+
+    a_entry = []
+    b_entry = []
+    rf = []
+  
+
+    def embed_fig(self, p, fig):
+       """
+       MODE — Comparator (written by Yoyo)
+       """
+        # embeds matplotlib figure directly into the tkinter window
+        cv = FigureCanvasTkAgg(fig, master=p)
+        cv.draw(); cv.get_tk_widget().pack(fill="both", expand=True, pady=4)
+
+    def run(self):
+        na, nb = a_entry.get().strip().lower(), b_entry.get().strip().lower()
+        # validate the inputs
+        if not na or not nb: return messagebox.showerror("Error", "Enter both molecule names.")
+        # close previous plot
+        for w in rf.winfo_children():
+            w.destroy()
+        plt.close("all")
+        # define heavy work
+
+        def heavy():
+            return self.comparator.compare(na, nb)
+
+        def done(res):
+            # show comparison
+            fig, summary = res
+            if fig is None: return messagebox.showerror("Error", summary)
+            self.embed_fig(rf, fig)
+            fig.savefig(f"output/spectra/comparison_{na}_vs_{nb}.png", dpi=120, bbox_inches="tight")
+            tk.Label(rf, text="Summary", bg=BG, fg=ACCENT,
+                     font=("Arial", 10, "bold")).pack(anchor="w", pady=(8, 2))
+            box = tk.Text(rf, bg=CARD, fg=TEXT, font=("Courier", 9), relief="flat",
+                          height=4, width=62, wrap="word",
+                          highlightthickness=1, highlightbackground=ACCENT)
+            box.insert("1.0", summary);
+            box.config(state="disabled")
+            box.pack(anchor="w", pady=4)
+
+        result = heavy()
+        done(result)
+
+
+    def show_comparator(self):
+        global a_entry, b_entry, rf
+        self.switch_to("Comparator")
+        f = self.scrollable(self.content)
+        tk.Label(f, text="Comparator compare two molecules side by side",
+                 bg=BG, fg=ACCENT, font=("Arial", 11, "bold")).pack(anchor="w", pady=(10, 2))
+        tk.Label(f, text="Only able to compare the 15 molecules from database", bg=BG, fg=GOLD,
+                 font=("Arial", 8, "italic")).pack(anchor="w", pady=(0, 4))
+
+        row = tk.Frame(f, bg=BG);
+        row.pack(anchor="w", pady=4)
+        tk.Label(row, text="Molecule A:", bg=BG, fg=TEXT, font=("Arial", 10)).pack(side="left", padx=(0, 0))
+        a_entry = tk.Entry(row, width=22, bg=CARD, fg=WHITE, insertbackground=WHITE,
+                           font=("Arial", 10), relief="flat");
+        a_entry.pack(side="left", padx=4)
+        tk.Label(row, text="Molecule B:", bg=BG, fg=TEXT, font=("Arial", 10)).pack(side="left", padx=(10, 0))
+        b_entry = tk.Entry(row, width=22, bg=CARD, fg=WHITE, insertbackground=WHITE,
+                           font=("Arial", 10), relief="flat");
+        b_entry.pack(side="left", padx=4)
+        rf = tk.Frame(f, bg=BG);
+        rf.pack(fill="both", expand=True, pady=6)
+
+        self.make_btn(f, "Compare", self.run)
+      
+    """
+    MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)
+    """
+    def show_database(self):
+            self.switch_to("Database")
+            f = self.scrollable(self.content)
+
+            tk.Label(f, text="Database  15 built-in compounds", bg=BG, fg=ACCENT,
+                     font=("Arial", 11, "bold")).pack(anchor="w", pady=(10,6))
+
+            for mol in sorted(self.db.all_molecules(), key=lambda m: m.name):
+                card = tk.Frame(f, bg=CARD, pady=6, padx=12)
+                card.pack(fill="x", pady=3)
+                tk.Label(card, text=f"{mol.name.title()}  {mol.formula}",
+                         bg=CARD, fg=ACCENT, font=("Arial", 10, "bold")).pack(anchor="w")
+                if mol.fun_fact:
+                    tk.Label(card, text=f"Fun Fact: {mol.fun_fact}", bg=CARD, fg=GOLD,
+                             font=("Arial", 8, "italic"), wraplength=700,
+                             justify="left").pack(anchor="w")
+
+
+
+
 
     def _build_ui(self):
         """ header """
@@ -139,10 +234,7 @@ class SpectroscopyApp:
                  justify="left", wraplength=440).pack(padx=20, pady=14)
         self.make_btn(pop, "Close", pop.destroy)
 
-    def embed_fig(self, p, fig):
-        """embeds matplotlib figure directly into the tkinter window"""
-        cv = FigureCanvasTkAgg(fig, master=p)
-        cv.draw(); cv.get_tk_widget().pack(fill="both", expand=True, pady=4)
+
 
     """ MODE 1 — Predictor by Mo """
     def show_predictor(self):
@@ -217,8 +309,10 @@ class SpectroscopyApp:
 
         self.make_btn(f, "Generate", generate)
 
-    """MODE 2 — Viewer (code written by Yoyo)"""
     def show_viewer(self):
+      """
+      MODE — Viewer (code written by Yoyo)
+      """
         self.switch_to("Viewer")
         f = self.scrollable(self.content)
 
@@ -269,10 +363,10 @@ class SpectroscopyApp:
                 info_label.config(text="Molecule not in database. Structure retrieved online. No spectral data available.")
             status_label.config(text=f"Image saved to {path}")
 
-        """
-        choice for user to export file (.xyz/.mol) to look the 3D molecule in Avogadro
-        the user can choose from both
-        """
+       
+        # choice for user to export file (.xyz/.mol) to look the 3D molecule in Avogadro
+        # the user can choose from both
+        
         def export(filetype):
             if self.viewer_mol is None:
                 messagebox.showerror("Error", "Draw a molecule first.")
@@ -296,75 +390,12 @@ class SpectroscopyApp:
         btn_row = tk.Frame(f, bg=BG)
         btn_row.pack(anchor="w", pady=4)
         
-        """button for export and draw"""
+        # button for export and draw
         self.make_btn(btn_row, "Draw", draw, side="left")
         self.make_btn(btn_row, "Export .mol for Avogadro", lambda: export("mol"), side="left")
         self.make_btn(btn_row, "Export .xyz for Avogadro", lambda: export("xyz"), side="left")
-"""end of code written by Yoyo"""
-"""
-MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)
-"""
-def show_database(self):
-        self.switch_to("Database")
-        f = self.scrollable(self.content)
+       
 
-        tk.Label(f, text="Database  15 built-in compounds", bg=BG, fg=ACCENT,
-                 font=("Arial", 11, "bold")).pack(anchor="w", pady=(10,6))
-
-        for mol in sorted(self.db.all_molecules(), key=lambda m: m.name):
-            card = tk.Frame(f, bg=CARD, pady=6, padx=12)
-            card.pack(fill="x", pady=3)
-            tk.Label(card, text=f"{mol.name.title()}  {mol.formula}",
-                     bg=CARD, fg=ACCENT, font=("Arial", 10, "bold")).pack(anchor="w")
-            if mol.fun_fact:
-                tk.Label(card, text=f"Fun Fact: {mol.fun_fact}", bg=CARD, fg=GOLD,
-                         font=("Arial", 8, "italic"), wraplength=700,
-                         justify="left").pack(anchor="w")
-                
-"""MODE 4 — Comparator (written by Yoyo)"""
-def show_comparator(self):
-        self.switch_to("Comparator")
-        f = self.scrollable(self.content)
-        tk.Label(f, text="Comparator compare two molecules side by side",
-                 bg=BG, fg=ACCENT, font=("Arial", 11, "bold")).pack(anchor="w", pady=(10,2))
-        tk.Label(f, text="Only able to compare the 15 molecules from database", bg=BG, fg=GOLD, font=("Arial", 8, "italic")).pack(anchor="w", pady=(0,4))
-
-        row = tk.Frame(f, bg=BG); row.pack(anchor="w", pady=4)
-        tk.Label(row, text="Molecule A:", bg=BG, fg=TEXT, font=("Arial", 10)).pack(side="left", padx=(0,0))
-        a_entry = tk.Entry(row, width=22, bg=CARD, fg=WHITE, insertbackground=WHITE,
-                           font=("Arial", 10), relief="flat"); a_entry.pack(side="left", padx=4)
-        tk.Label(row, text="Molecule B:", bg=BG, fg=TEXT, font=("Arial", 10)).pack(side="left", padx=(10,0))
-        b_entry = tk.Entry(row, width=22, bg=CARD, fg=WHITE, insertbackground=WHITE,
-                           font=("Arial", 10), relief="flat"); b_entry.pack(side="left", padx=4)
-        rf = tk.Frame(f, bg=BG); rf.pack(fill="both", expand=True, pady=6)
-
-def run():
-            na, nb = a_entry.get().strip().lower(), b_entry.get().strip().lower() 
-            """validate the inputs"""
-            if not na or not nb: return messagebox.showerror("Error", "Enter both molecule names.") 
-            """close previous plot"""
-            for w in rf.winfo_children(): 
-                w.destroy()
-            plt.close("all")
-            """define heavy work"""
-            def heavy(): 
-                return self.comparator.compare(na, nb)
-            """show comparison"""
-            def done(res):  
-                fig, summary = res
-                if fig is None: return messagebox.showerror("Error", summary)
-                self.embed_fig(rf, fig)
-                fig.savefig(f"output/spectra/comparison_{na}_vs_{nb}.png", dpi=120, bbox_inches="tight")
-                tk.Label(rf, text="Summary", bg=BG, fg=ACCENT,
-                         font=("Arial", 10, "bold")).pack(anchor="w", pady=(8,2))
-                box = tk.Text(rf, bg=CARD, fg=TEXT, font=("Courier", 9), relief="flat",
-                              height=4, width=62, wrap="word",
-                              highlightthickness=1, highlightbackground=ACCENT)
-                box.insert("1.0", summary); box.config(state="disabled")
-                box.pack(anchor="w", pady=4)
-            result = heavy()
-            done(result)
-self.make_btn(f, "Compare", run)
 
 
 if __name__ == "__main__":
