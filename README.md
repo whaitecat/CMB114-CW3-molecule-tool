@@ -41,10 +41,10 @@ View 3D structure:
 4. Open the file in Avogadro to view the 3D sturcture.
 
 ## Mode - Molecule comparator
-The comparator ables to compare the spectra of two of the molecules among 15 molecules from the database.
+The comparator ables to compare the spectra of two of the molecules among 15 molecules from the database. The four spectra are plotted with matplotlib. They are shown in an organised layout. The peaks data are from the molecule database.
 
 1. Enter the two molecules you want to compare and click "Compare".
-2. IR, NMR, MS, and UV spectra of both molecules are shown. In summary box, a summary and comparison from the database of the molecules are also shown, such as their formula, molecular weight, and functional group.
+2. IR, NMR, MS, and UV spectra of both molecules are shown side by side. In summary box, a summary and comparison from the database of the molecules are also shown, such as their formula, molecular weight, and functional group.
 
 ## References for the Modes
 1. Plotting with matplotlib: https://matplotlib.org/stable/plot_types/index.html
