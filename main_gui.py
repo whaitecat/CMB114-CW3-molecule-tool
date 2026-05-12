@@ -301,10 +301,9 @@ class SpectroscopyApp:
         self.make_btn(btn_row, "Export .mol for Avogadro", lambda: export("mol"), side="left")
         self.make_btn(btn_row, "Export .xyz for Avogadro", lambda: export("xyz"), side="left")
 """end of code written by Yoyo"""
-
-    """
-    MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)
-    """
+"""
+MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)
+"""
     def show_database(self):
         self.switch_to("Database")
         f = self.scrollable(self.content)
