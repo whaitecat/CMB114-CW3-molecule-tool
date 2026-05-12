@@ -322,7 +322,7 @@ def show_database(self):
                          justify="left").pack(anchor="w")
                 
 """MODE 4 — Comparator (written by Yoyo)"""
-    def show_comparator(self):
+ def show_comparator(self):
         self.switch_to("Comparator")
         f = self.scrollable(self.content)
         tk.Label(f, text="Comparator compare two molecules side by side",
@@ -338,7 +338,7 @@ def show_database(self):
                            font=("Arial", 10), relief="flat"); b_entry.pack(side="left", padx=4)
         rf = tk.Frame(f, bg=BG); rf.pack(fill="both", expand=True, pady=6)
 
-        def run():
+def run():
             na, nb = a_entry.get().strip().lower(), b_entry.get().strip().lower() 
             """validate the inputs"""
             if not na or not nb: return messagebox.showerror("Error", "Enter both molecule names.") 
