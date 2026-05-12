@@ -69,7 +69,7 @@ class SpectrumComparator:
     
     def _plot_ir(self, ax, mol, colour, label):
       """
-      plot spectrum
+      plot IR spectrum
       """
         if not mol.ir_peaks: return self._no_data(ax, mol, colour, label, "No IR data")
         x = np.linspace(4000, 500, 4000)
@@ -81,6 +81,9 @@ class SpectrumComparator:
             ax.plot(wn, 100-inten, "o", color=colour, markersize=2)
 
     def _plot_ms(self, ax, mol, colour, label):
+      """
+      plot MS spectrum
+      """
         if not mol.ms_peaks: return self._no_data(ax, mol, colour, label, "No MS data")
         mz  = [p[0] for p in mol.ms_peaks]
         rel = [p[1] for p in mol.ms_peaks]
@@ -94,6 +97,9 @@ class SpectrumComparator:
         ax.set_title(f"{label}: {mol.name.title()}", fontsize=8, color=colour)
 
     def _plot_uv(self, ax, mol, colour, label):
+      """
+      plot UV spectrum
+      """
         if not mol.uv_peaks: return self._no_data(ax, mol, colour, label, "No UV data")
         wl   = np.linspace(200, 800, 1200)
         abs_ = UVVisSpectrum(mol)._build_spectrum(wl)
@@ -103,6 +109,9 @@ class SpectrumComparator:
         ax.set_title(f"{label}: {mol.name.title()}", fontsize=8, color=colour)
 
     def _plot_nmr(self, ax, mol, colour, label):
+      """
+      plot NMR spectrum
+      """
         if not mol.nmr_peaks: return self._no_data(ax, mol, colour, label, "No NMR data")
         shifts  = [p[0] for p in mol.nmr_peaks]
         ppm_max = max(shifts)+0.8; ppm_min = max(min(shifts)-0.5, 0)
