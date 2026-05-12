@@ -15,12 +15,12 @@ User also expected to install [matplotlib](https://matplotlib.org/stable/index.h
 
 ## Mode - Predictor
 Type a molecule name from the database (ethanol, acetone, etc) and select its respective spectra to generate, either IR, NMR, Mass-spec, UV-VIS or all four. Data was sourced using the sdbs website.
-Using figurecanvas from tkinter made embedding the graphs onto the UI more straightforward
-It is worth noting that the user's scroll wheel may not register as this was an issue that couldnt be addressed in time, a scrollable canvas and scroll bar was used in the mean time
+Using figurecanvas from tkinter made embedding the graphs onto the UI more straightforward.
+It is worth noting that the user's scroll wheel may not register as this was an issue that couldnt be addressed in time, a scrollable canvas and scroll bar was used in the mean time.
 
 ## Sub-Mode - Database
-The viewer gets to see the compounds already built in and a fun fact about them. The option to click each one and redirect you to the predictor to generate the plots was suggested but couldnt be implemented in time. Worth looking into in the future
-The database originally started off as python code but after meetings with our project supersor it was suggested we use JSON, so the work around was to use pythons json module to export to JSON file and use an online JSON formatter to get it in the right format and ensure it was less messy
+The viewer gets to see the compounds already built in and a fun fact about them. The option to click each one and redirect you to the predictor to generate the plots was suggested but couldn't be implemented in time. Worth looking into in the future.
+The database originally started off as python code but after meetings with our project supervisor it was suggested we use JSON, so the work around was to use pythons json module to export to JSON file and use an online JSON formatter to get it in the right format and ensure it was less messy.
 
 ## Mode - Molecule viewer
 The viewer ables to generate the 2D and 3D molecule structure.
