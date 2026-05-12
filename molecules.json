@@ -1,0 +1,1306 @@
+{
+  "molecules": [
+    {
+      "name": "acetone",
+      "iupac_name": "propan-2-one",
+      "formula": "C3H6O",
+      "molecular_weight": 58.08,
+      "smiles": "CC(=O)C",
+      "compound_class": "ketone",
+      "functional_groups": [
+        "ketone",
+        "carbonyl"
+      ],
+      "fun_fact": "The human body produces acetone naturally during fat metabolism.",
+      "ir_peaks": [
+        [
+          1715,
+          100,
+          "C=O stretch (ketone)"
+        ],
+        [
+          1360,
+          60,
+          "C-H bend (CH3)"
+        ],
+        [
+          1220,
+          55,
+          "C-C-C stretch"
+        ],
+        [
+          530,
+          40,
+          "C=O bend"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          58,
+          20,
+          "M+"
+        ],
+        [
+          43,
+          100,
+          "CH3CO+ (base peak)"
+        ],
+        [
+          15,
+          40,
+          "CH3+"
+        ],
+        [
+          27,
+          15,
+          "C2H3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          270,
+          15,
+          "n->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          2.17,
+          "s",
+          6.0,
+          "CH3 groups"
+        ]
+      ]
+    },
+    {
+      "name": "benzaldehyde",
+      "iupac_name": "benzaldehyde",
+      "formula": "C7H6O",
+      "molecular_weight": 106.12,
+      "smiles": "O=Cc1ccccc1",
+      "compound_class": "aromatic aldehyde",
+      "functional_groups": [
+        "aldehyde",
+        "carbonyl",
+        "aromatic",
+        "benzene ring"
+      ],
+      "fun_fact": "It is responsible for the way almonds and marzipans smell.",
+      "ir_peaks": [
+        [
+          1700,
+          100,
+          "C=O stretch (conjugated aldehyde)"
+        ],
+        [
+          2820,
+          50,
+          "C-H stretch (aldehyde)"
+        ],
+        [
+          2740,
+          55,
+          "C-H stretch (Fermi resonance)"
+        ],
+        [
+          1600,
+          70,
+          "C=C aromatic"
+        ],
+        [
+          1580,
+          60,
+          "C=C aromatic"
+        ],
+        [
+          750,
+          80,
+          "C-H oop bend (monosubstituted)"
+        ],
+        [
+          690,
+          75,
+          "C-H oop bend"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          106,
+          80,
+          "M+"
+        ],
+        [
+          105,
+          100,
+          "C6H5CO+ (base peak)"
+        ],
+        [
+          77,
+          70,
+          "C6H5+"
+        ],
+        [
+          51,
+          30,
+          "C4H3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          250,
+          11000,
+          "pi->pi*"
+        ],
+        [
+          280,
+          1500,
+          "pi->pi*"
+        ],
+        [
+          328,
+          650,
+          "n->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          10.0,
+          "s",
+          1.0,
+          "CHO"
+        ],
+        [
+          7.5,
+          "m",
+          5.0,
+          "Ar-H"
+        ]
+      ]
+    },
+    {
+      "name": "cyclohexanone",
+      "iupac_name": "cyclohexan-1-one",
+      "formula": "C6H10O",
+      "molecular_weight": 98.14,
+      "smiles": "O=C1CCCCC1",
+      "compound_class": "cyclic ketone",
+      "functional_groups": [
+        "ketone",
+        "carbonyl",
+        "cyclic"
+      ],
+      "fun_fact": "Used industrially for making nylon.",
+      "ir_peaks": [
+        [
+          1715,
+          100,
+          "C=O stretch (6-membered ring ketone)"
+        ],
+        [
+          1450,
+          50,
+          "CH2 scissors"
+        ],
+        [
+          1230,
+          45,
+          "C-C-C stretch"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          98,
+          70,
+          "M+"
+        ],
+        [
+          55,
+          100,
+          "C4H7O+ (base peak)"
+        ],
+        [
+          42,
+          60,
+          "C3H6+"
+        ],
+        [
+          27,
+          35,
+          "C2H3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          291,
+          14,
+          "n->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          2.35,
+          "m",
+          4.0,
+          "a-CH2"
+        ],
+        [
+          1.85,
+          "m",
+          4.0,
+          "b-CH2"
+        ],
+        [
+          1.7,
+          "m",
+          2.0,
+          "y-CH2"
+        ]
+      ]
+    },
+    {
+      "name": "ethanol",
+      "iupac_name": "ethan-1-ol",
+      "formula": "C2H6O",
+      "molecular_weight": 46.07,
+      "smiles": "CCO",
+      "compound_class": "primary alcohol",
+      "functional_groups": [
+        "alcohol",
+        "hydroxyl",
+        "primary alcohol"
+      ],
+      "fun_fact": "It binds to receptors in the brain and increases dopamine levels, That's why you get drunk.",
+      "ir_peaks": [
+        [
+          3350,
+          80,
+          "O-H stretch (broad, H-bonded)"
+        ],
+        [
+          2980,
+          60,
+          "C-H stretch"
+        ],
+        [
+          1380,
+          50,
+          "C-H bend (CH3)"
+        ],
+        [
+          1050,
+          100,
+          "C-O stretch (primary alcohol)"
+        ],
+        [
+          880,
+          40,
+          "C-C stretch"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          46,
+          10,
+          "M+"
+        ],
+        [
+          45,
+          50,
+          "M-1"
+        ],
+        [
+          31,
+          100,
+          "CH2OH+ (base peak)"
+        ],
+        [
+          29,
+          30,
+          "CHO+"
+        ],
+        [
+          27,
+          25,
+          "C2H3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          200,
+          200,
+          "sigma->sigma*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          3.69,
+          "q",
+          2.0,
+          "OCH2"
+        ],
+        [
+          2.6,
+          "s",
+          1.0,
+          "OH"
+        ],
+        [
+          1.19,
+          "t",
+          3.0,
+          "CH3"
+        ]
+      ]
+    },
+    {
+      "name": "phenol",
+      "iupac_name": "phenol",
+      "formula": "C6H6O",
+      "molecular_weight": 94.11,
+      "smiles": "Oc1ccccc1",
+      "compound_class": "phenol",
+      "functional_groups": [
+        "alcohol",
+        "hydroxyl",
+        "aromatic",
+        "phenol",
+        "benzene ring"
+      ],
+      "fun_fact": "Joseph Lister used phenol as the first surgical antiseptic in 1865.",
+      "ir_peaks": [
+        [
+          3300,
+          70,
+          "O-H stretch (phenol)"
+        ],
+        [
+          1600,
+          80,
+          "C=C aromatic"
+        ],
+        [
+          1500,
+          75,
+          "C=C aromatic"
+        ],
+        [
+          1230,
+          90,
+          "C-O stretch (phenol)"
+        ],
+        [
+          750,
+          85,
+          "C-H oop bend"
+        ],
+        [
+          690,
+          80,
+          "C-H oop bend"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          94,
+          100,
+          "M+ (base peak)"
+        ],
+        [
+          65,
+          40,
+          "C5H5+"
+        ],
+        [
+          66,
+          30,
+          "M-28"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          210,
+          6200,
+          "pi->pi*"
+        ],
+        [
+          270,
+          1450,
+          "pi->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.25,
+          "m",
+          5.0,
+          "Ar-H"
+        ],
+        [
+          5.3,
+          "s",
+          1.0,
+          "OH"
+        ]
+      ]
+    },
+    {
+      "name": "acetic acid",
+      "iupac_name": "ethanoic acid",
+      "formula": "C2H4O2",
+      "molecular_weight": 60.05,
+      "smiles": "CC(=O)O",
+      "compound_class": "carboxylic acid",
+      "functional_groups": [
+        "carboxylic acid",
+        "carbonyl",
+        "hydroxyl"
+      ],
+      "fun_fact": "Vinegar is typically 5-8% acetic acid in water.",
+      "ir_peaks": [
+        [
+          3300,
+          70,
+          "O-H stretch (very broad, 2500-3300)"
+        ],
+        [
+          2600,
+          50,
+          "O-H stretch tail"
+        ],
+        [
+          1710,
+          100,
+          "C=O stretch (carboxylic acid)"
+        ],
+        [
+          1430,
+          55,
+          "O-H in-plane bend"
+        ],
+        [
+          1280,
+          60,
+          "C-O stretch"
+        ],
+        [
+          920,
+          65,
+          "O-H oop bend (diagnostic)"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          60,
+          50,
+          "M+"
+        ],
+        [
+          45,
+          80,
+          "COOH+"
+        ],
+        [
+          43,
+          100,
+          "CH3CO+ (base peak)"
+        ],
+        [
+          15,
+          30,
+          "CH3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          204,
+          60,
+          "n->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          11.5,
+          "s",
+          1.0,
+          "COOH"
+        ],
+        [
+          2.1,
+          "s",
+          3.0,
+          "CH3"
+        ]
+      ]
+    },
+    {
+      "name": "ethyl acetate",
+      "iupac_name": "ethyl ethanoate",
+      "formula": "C4H8O2",
+      "molecular_weight": 88.11,
+      "smiles": "CCOC(=O)C",
+      "compound_class": "ester",
+      "functional_groups": [
+        "ester",
+        "carbonyl"
+      ],
+      "fun_fact": "It is responsible for the fruity smell in some wines.",
+      "ir_peaks": [
+        [
+          1735,
+          100,
+          "C=O stretch (ester)"
+        ],
+        [
+          1250,
+          90,
+          "C-O-C asymmetric stretch"
+        ],
+        [
+          1050,
+          70,
+          "C-O-C symmetric stretch"
+        ],
+        [
+          2980,
+          50,
+          "C-H stretch"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          88,
+          15,
+          "M+"
+        ],
+        [
+          73,
+          10,
+          "M-15"
+        ],
+        [
+          45,
+          100,
+          "OC2H5+ (base peak)"
+        ],
+        [
+          43,
+          90,
+          "CH3CO+"
+        ],
+        [
+          29,
+          30,
+          "C2H5+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          207,
+          70,
+          "n->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          4.12,
+          "q",
+          2.0,
+          "OCH2"
+        ],
+        [
+          2.04,
+          "s",
+          3.0,
+          "COCH3"
+        ],
+        [
+          1.26,
+          "t",
+          3.0,
+          "OCH2CH3"
+        ]
+      ]
+    },
+    {
+      "name": "aniline",
+      "iupac_name": "aniline",
+      "formula": "C6H7N",
+      "molecular_weight": 93.13,
+      "smiles": "Nc1ccccc1",
+      "compound_class": "primary aromatic amine",
+      "functional_groups": [
+        "amine",
+        "primary amine",
+        "aromatic",
+        "benzene ring"
+      ],
+      "fun_fact": "The first synthetic dye, mauveine, was accidentally discovered while attempting to synthesise quinine from aniline.",
+      "ir_peaks": [
+        [
+          3480,
+          70,
+          "N-H stretch (asymmetric)"
+        ],
+        [
+          3380,
+          65,
+          "N-H stretch (symmetric)"
+        ],
+        [
+          1620,
+          60,
+          "N-H bend"
+        ],
+        [
+          1600,
+          75,
+          "C=C aromatic"
+        ],
+        [
+          750,
+          80,
+          "C-H oop bend"
+        ],
+        [
+          690,
+          75,
+          "C-H oop bend"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          93,
+          100,
+          "M+ (base peak)"
+        ],
+        [
+          66,
+          35,
+          "M-27 (HCN loss)"
+        ],
+        [
+          65,
+          30,
+          "C5H5+"
+        ],
+        [
+          39,
+          25,
+          "C3H3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          230,
+          8600,
+          "pi->pi*"
+        ],
+        [
+          280,
+          1430,
+          "pi->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.2,
+          "m",
+          5.0,
+          "Ar-H"
+        ],
+        [
+          3.6,
+          "s",
+          2.0,
+          "NH2"
+        ]
+      ]
+    },
+    {
+      "name": "dimethylformamide",
+      "iupac_name": "N,N-dimethylformamide",
+      "formula": "C3H7NO",
+      "molecular_weight": 73.09,
+      "smiles": "CN(C)C=O",
+      "compound_class": "amide",
+      "functional_groups": [
+        "amide",
+        "carbonyl",
+        "tertiary amine"
+      ],
+      "fun_fact": "It is used as a solvent in pharmaceutical manufacturing, known as DMF.",
+      "ir_peaks": [
+        [
+          1670,
+          100,
+          "C=O stretch (amide)"
+        ],
+        [
+          1500,
+          75,
+          "C-N stretch"
+        ],
+        [
+          2930,
+          45,
+          "C-H stretch"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          73,
+          60,
+          "M+"
+        ],
+        [
+          72,
+          80,
+          "M-1"
+        ],
+        [
+          44,
+          100,
+          "base peak"
+        ],
+        [
+          42,
+          30,
+          "CH2=NCH3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          270,
+          500,
+          "n->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.95,
+          "s",
+          1.0,
+          "CHO"
+        ],
+        [
+          3.01,
+          "s",
+          3.0,
+          "N-CH3 (cis)"
+        ],
+        [
+          2.96,
+          "s",
+          3.0,
+          "N-CH3 (trans)"
+        ]
+      ]
+    },
+    {
+      "name": "hexane",
+      "iupac_name": "hexane",
+      "formula": "C6H14",
+      "molecular_weight": 86.18,
+      "smiles": "CCCCCC",
+      "compound_class": "alkane",
+      "functional_groups": [
+        "alkane"
+      ],
+      "fun_fact": " It is commonly used to extract vegetable oils from seeds.",
+      "ir_peaks": [
+        [
+          2960,
+          100,
+          "C-H stretch"
+        ],
+        [
+          2850,
+          80,
+          "C-H stretch (CH2)"
+        ],
+        [
+          1465,
+          60,
+          "C-H bend (scissors)"
+        ],
+        [
+          1380,
+          55,
+          "C-H bend (CH3)"
+        ],
+        [
+          720,
+          40,
+          "CH2 rocking"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          86,
+          30,
+          "M+"
+        ],
+        [
+          71,
+          40,
+          "M-15"
+        ],
+        [
+          57,
+          60,
+          "C4H9+"
+        ],
+        [
+          43,
+          80,
+          "C3H7+ (base peak)"
+        ],
+        [
+          29,
+          70,
+          "C2H5+"
+        ]
+      ],
+      "uv_peaks": [],
+      "nmr_peaks": [
+        [
+          1.28,
+          "m",
+          8.0,
+          "internal CH2"
+        ],
+        [
+          0.89,
+          "t",
+          6.0,
+          "terminal CH3"
+        ]
+      ]
+    },
+    {
+      "name": "benzene",
+      "iupac_name": "benzene",
+      "formula": "C6H6",
+      "molecular_weight": 78.11,
+      "smiles": "c1ccccc1",
+      "compound_class": "aromatic hydrocarbon",
+      "functional_groups": [
+        "aromatic",
+        "benzene ring"
+      ],
+      "fun_fact": "Kekule claimed the ring structure came to him in a dream of a snake biting its own tail.",
+      "ir_peaks": [
+        [
+          3030,
+          50,
+          "=C-H stretch (aromatic)"
+        ],
+        [
+          1600,
+          30,
+          "C=C ring stretch"
+        ],
+        [
+          1500,
+          55,
+          "C=C ring stretch"
+        ],
+        [
+          680,
+          100,
+          "C-H oop bend (monosubstituted)"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          78,
+          100,
+          "M+ (base peak)"
+        ],
+        [
+          77,
+          40,
+          "C6H5+"
+        ],
+        [
+          52,
+          20,
+          "C4H4+"
+        ],
+        [
+          51,
+          30,
+          "C4H3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          204,
+          7900,
+          "pi->pi* (E2)"
+        ],
+        [
+          254,
+          200,
+          "pi->pi* (B band)"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.36,
+          "s",
+          6.0,
+          "Ar-H"
+        ]
+      ]
+    },
+    {
+      "name": "toluene",
+      "iupac_name": "methylbenzene",
+      "formula": "C7H8",
+      "molecular_weight": 92.14,
+      "smiles": "Cc1ccccc1",
+      "compound_class": "aromatic hydrocarbon",
+      "functional_groups": [
+        "aromatic",
+        "benzene ring",
+        "methyl substituent"
+      ],
+      "fun_fact": "Toluene gets its name from the tree it was first isolated out of, the tolu balsam",
+      "ir_peaks": [
+        [
+          3030,
+          45,
+          "=C-H stretch (aromatic)"
+        ],
+        [
+          2920,
+          55,
+          "C-H stretch (CH3)"
+        ],
+        [
+          1605,
+          60,
+          "C=C ring stretch"
+        ],
+        [
+          1500,
+          70,
+          "C=C ring stretch"
+        ],
+        [
+          730,
+          90,
+          "C-H oop bend (monosubstituted)"
+        ],
+        [
+          690,
+          85,
+          "C-H oop bend"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          92,
+          60,
+          "M+"
+        ],
+        [
+          91,
+          100,
+          "C7H7+ (tropylium, base peak)"
+        ],
+        [
+          65,
+          20,
+          "C5H5+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          207,
+          7000,
+          "pi->pi*"
+        ],
+        [
+          262,
+          300,
+          "pi->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.25,
+          "m",
+          5.0,
+          "Ar-H"
+        ],
+        [
+          2.34,
+          "s",
+          3.0,
+          "CH3"
+        ]
+      ]
+    },
+    {
+      "name": "naphthalene",
+      "iupac_name": "naphthalene",
+      "formula": "C10H8",
+      "molecular_weight": 128.17,
+      "smiles": "c1ccc2ccccc2c1",
+      "compound_class": "polycyclic aromatic hydrocarbon",
+      "functional_groups": [
+        "aromatic",
+        "fused ring",
+        "PAH"
+      ],
+      "fun_fact": "It is the main ingredient in traditional mothballs.",
+      "ir_peaks": [
+        [
+          3060,
+          55,
+          "=C-H stretch (aromatic)"
+        ],
+        [
+          1600,
+          65,
+          "C=C ring stretch"
+        ],
+        [
+          1510,
+          55,
+          "C=C ring stretch"
+        ],
+        [
+          780,
+          100,
+          "C-H oop bend"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          128,
+          100,
+          "M+ (base peak)"
+        ],
+        [
+          127,
+          40,
+          "M-1"
+        ],
+        [
+          102,
+          15,
+          "M-26"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          220,
+          100000,
+          "pi->pi*"
+        ],
+        [
+          275,
+          5600,
+          "pi->pi*"
+        ],
+        [
+          312,
+          250,
+          "pi->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.83,
+          "m",
+          4.0,
+          "H-1,4,5,8"
+        ],
+        [
+          7.46,
+          "m",
+          4.0,
+          "H-2,3,6,7"
+        ]
+      ]
+    },
+    {
+      "name": "chloroform",
+      "iupac_name": "trichloromethane",
+      "formula": "CHCl3",
+      "molecular_weight": 119.37,
+      "smiles": "ClC(Cl)Cl",
+      "compound_class": "trihalomethane",
+      "functional_groups": [
+        "haloalkane",
+        "chloride",
+        "alkyl halide"
+      ],
+      "fun_fact": "It was used as an anaesthetic in the 19th century before safer alternatives were found.",
+      "ir_peaks": [
+        [
+          3020,
+          60,
+          "C-H stretch"
+        ],
+        [
+          1220,
+          80,
+          "C-H bend"
+        ],
+        [
+          760,
+          100,
+          "C-Cl stretch (strong)"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          119,
+          60,
+          "M+ (3x35Cl)"
+        ],
+        [
+          121,
+          60,
+          "M+2 (isotope)"
+        ],
+        [
+          83,
+          100,
+          "CHCl2+ (base peak)"
+        ],
+        [
+          85,
+          65,
+          "CHCl2+ isotope"
+        ],
+        [
+          47,
+          30,
+          "CHCl+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          250,
+          200,
+          "n->sigma*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.26,
+          "s",
+          1.0,
+          "CHCl3"
+        ]
+      ]
+    },
+    {
+      "name": "bromobenzene",
+      "iupac_name": "bromobenzene",
+      "formula": "C6H5Br",
+      "molecular_weight": 157.01,
+      "smiles": "Brc1ccccc1",
+      "compound_class": "aryl halide",
+      "functional_groups": [
+        "haloalkane",
+        "bromide",
+        "aryl halide",
+        "aromatic",
+        "benzene ring"
+      ],
+      "fun_fact": " Bromine + Benzene = Bromobenzene (Quite literally)",
+      "ir_peaks": [
+        [
+          3060,
+          50,
+          "=C-H stretch"
+        ],
+        [
+          1580,
+          65,
+          "C=C aromatic"
+        ],
+        [
+          1480,
+          70,
+          "C=C aromatic"
+        ],
+        [
+          1000,
+          60,
+          "C-H in-plane bend"
+        ],
+        [
+          750,
+          90,
+          "C-H oop bend"
+        ],
+        [
+          680,
+          85,
+          "C-H oop bend"
+        ]
+      ],
+      "ms_peaks": [
+        [
+          156,
+          50,
+          "M+ (79Br)"
+        ],
+        [
+          158,
+          50,
+          "M+2 (81Br) equal intensity = 1 Br"
+        ],
+        [
+          77,
+          100,
+          "C6H5+ (base peak)"
+        ],
+        [
+          51,
+          30,
+          "C4H3+"
+        ]
+      ],
+      "uv_peaks": [
+        [
+          210,
+          7000,
+          "pi->pi*"
+        ],
+        [
+          270,
+          800,
+          "pi->pi*"
+        ]
+      ],
+      "nmr_peaks": [
+        [
+          7.58,
+          "d",
+          2.0,
+          "ortho Ar-H"
+        ],
+        [
+          7.3,
+          "t",
+          2.0,
+          "meta Ar-H"
+        ],
+        [
+          7.24,
+          "t",
+          1.0,
+          "para Ar-H"
+        ]
+      ]
+    }
+  ]
+}
