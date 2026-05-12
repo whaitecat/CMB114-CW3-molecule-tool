@@ -140,7 +140,7 @@ class SpectroscopyApp:
         self.make_btn(pop, "Close", pop.destroy)
 
     def embed_fig(self, p, fig):
-        # embeds matplotlib figure directly into the tkinter window
+        """embeds matplotlib figure directly into the tkinter window"""
         cv = FigureCanvasTkAgg(fig, master=p)
         cv.draw(); cv.get_tk_widget().pack(fill="both", expand=True, pady=4)
 
@@ -302,7 +302,7 @@ class SpectroscopyApp:
         self.make_btn(btn_row, "Export .xyz for Avogadro", lambda: export("xyz"), side="left")
 """end of code written by Yoyo"""
 
-    """ MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)"""
+    """MODE 3 — Database by Mo (just shows what's in the database tbh and a fun fact about it)"""
     def show_database(self):
         self.switch_to("Database")
         f = self.scrollable(self.content)
@@ -320,7 +320,7 @@ class SpectroscopyApp:
                          font=("Arial", 8, "italic"), wraplength=700,
                          justify="left").pack(anchor="w")
                 
-""" MODE 4 — Comparator (written by Yoyo)"""
+"""MODE 4 — Comparator (written by Yoyo)"""
     def show_comparator(self):
         self.switch_to("Comparator")
         f = self.scrollable(self.content)
