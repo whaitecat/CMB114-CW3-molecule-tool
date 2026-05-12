@@ -35,5 +35,5 @@ The comparator ables to compare the spectra of two of the molecules among 15 mol
 2. IR, NMR, MS, and UV spectra of both molecules are shown. In summary box, a summary and comparison from the database of the molecules are also shown, such as their formula, molecular weight, and functional group.
 
 ## References for the Modes
-Plotting with matplotlib: https://matplotlib.org/stable/plot_types/index.html
-Grid layout of the subplots by matplotlib: https://matplotlib.org/stable/api/_as_gen/matplotlib.gridspec.GridSpec.html 
+1. Plotting with matplotlib: https://matplotlib.org/stable/plot_types/index.html
+2. Grid layout of the subplots by matplotlib: https://matplotlib.org/stable/api/_as_gen/matplotlib.gridspec.GridSpec.html 
