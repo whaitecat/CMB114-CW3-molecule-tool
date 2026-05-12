@@ -348,7 +348,8 @@ class SpectroscopyApp:
             """define heavy work"""
             def heavy(): 
                 return self.comparator.compare(na, nb)
-            def done(res):  #show comparison
+            """show comparison"""
+            def done(res):  
                 fig, summary = res
                 if fig is None: return messagebox.showerror("Error", summary)
                 self.embed_fig(rf, fig)
