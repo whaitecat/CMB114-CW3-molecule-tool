@@ -63,6 +63,7 @@ class SpectroscopyApp:
         self._build_ui()
         self.show_predictor()
 
+# By Yoyo
     a_entry = []
     b_entry = []
     rf = []
@@ -76,6 +77,7 @@ class SpectroscopyApp:
         cv = FigureCanvasTkAgg(fig, master=p)
         cv.draw(); cv.get_tk_widget().pack(fill="both", expand=True, pady=4)
 
+    # put run function here, otherwise the mode won't run correctly 
     def run(self):
         na, nb = a_entry.get().strip().lower(), b_entry.get().strip().lower()
         # validate the inputs
